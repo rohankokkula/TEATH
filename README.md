@@ -3,6 +3,7 @@
 ### This project is an app-version of ML challenge by HackerEarth Pride Month Edition<br>Ranked 110th Position out of 5000 Participants.
 Link to Competition : https://www.hackerearth.com/challenges/competitive/hackerearth-machine-learning-challenge-pride-month-edition/
 <br>
+
 Steps to Follow:
 1. Clone the repository `git clone https://github.com/rohankokkula/teath.git`
 2. For Localhost:
@@ -28,8 +29,9 @@ Steps to Follow:
 
 <br>
 Link to youtube Tutorial: <br>
+
 References:
 1. Streamlit: https://docs.streamlit.io/en/stable/api.html
-1. OpenCV Thresholding: https://docs.opencv.org/master/d7/d4d/tutorial_py_thresholding.html
-2. Pytesseract: https://pypi.org/project/pytesseract/ 
-3. Tesseract deployment on Heroku using Flask: https://towardsdatascience.com/deploy-python-tesseract-ocr-on-heroku-bbcc39391a8d
+2. OpenCV Thresholding: https://docs.opencv.org/master/d7/d4d/tutorial_py_thresholding.html
+3. Pytesseract: https://pypi.org/project/pytesseract/ 
+4. Tesseract deployment on Heroku using Flask: https://towardsdatascience.com/deploy-python-tesseract-ocr-on-heroku-bbcc39391a8d
