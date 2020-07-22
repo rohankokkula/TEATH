@@ -92,9 +92,13 @@ if image_file is not None:
         if(thresh==types[0]):
             if(st.sidebar.checkbox("Grayscale")):
                 img = cv.imdecode(file_bytes, cv.IMREAD_GRAYSCALE)
-            slide=st.sidebar.slider("Select threshold",0,255)
-            ret,th = cv.threshold(img,slide,255,cv.THRESH_BINARY)
-            plot(thresh,th)
+                slide=st.sidebar.slider("Select threshold",0,255)
+                ret,th = cv.threshold(img,slide,255,cv.THRESH_BINARY)
+                plot(thresh,th)
+            else:
+                slide=st.sidebar.slider("Select threshold",0,255)
+                ret,th = cv.threshold(img,slide,255,cv.THRESH_BINARY)
+                plot(thresh,th)
         elif(thresh==types[1]):
             slide=st.sidebar.slider("Select threshold",0,255)
             ret,th = cv.threshold(img,slide,255,cv.THRESH_BINARY_INV)
