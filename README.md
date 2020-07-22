@@ -2,7 +2,7 @@
 ## TEATH is a WebApp for Extracting Text from Images and Thresholding with the help of pytesseract and OpenCV.
 ### This project is an app-version of ML challenge by HackerEarth Pride Month Edition<br>Ranked 110th Position out of 5000 Participants.
 Link to Competition : https://www.hackerearth.com/challenges/competitive/hackerearth-machine-learning-challenge-pride-month-edition/<br>
-## Try it out! teath.herokuapp.com
+## Try it out! http://teath.herokuapp.com
 Steps to Follow:
 1. Clone the repository `git clone https://github.com/rohankokkula/teath.git`
 2. For Localhost:
