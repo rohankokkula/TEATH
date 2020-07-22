@@ -68,8 +68,9 @@ def extract(img):
             slot1.markdown(f"{text}", unsafe_allow_html=True)
             polar=round(TextBlob(text).sentiment.polarity,2)
             slot2.markdown(f"""<h1 style='color:yellow;'>Polarity: <span style='color:white;'>{polar}</span>   Sentiment: <span style='color:white;'>{sentiments(polar)}</span></h1>""", unsafe_allow_html=True)
+            slot3.markdown(f"""<h1 style='color:yellow;'>Sentiment: <span style='color:white;'>{sentiments(polar)}</span></h1>""", unsafe_allow_html=True)
     else:
-        st.markdown("<h1 style='color:white;'>Textless Image</h1>", unsafe_allow_html=True)
+        st.markdown("""<h1 style='text-align: center;'>TEXTLESS IMAGE</h1>""",unsafe_allow_html=True)
 def plot(name,value):
     st.markdown(f"""<h1 style='text-align: center;'>{name} OUTPUT</h1>""",unsafe_allow_html=True)
     plt.imshow(value,'gray')
@@ -92,30 +93,36 @@ if image_file is not None:
         if(thresh==types[0]):
             if(st.sidebar.checkbox("Grayscale")):
                 img = cv.imdecode(file_bytes, cv.IMREAD_GRAYSCALE)
-                slide=st.sidebar.slider("Select threshold",0,255)
-                ret,th = cv.threshold(img,slide,255,cv.THRESH_BINARY)
-                plot(thresh,th)
-            else:
-                slide=st.sidebar.slider("Select threshold",0,255)
-                ret,th = cv.threshold(img,slide,255,cv.THRESH_BINARY)
-                plot(thresh,th)
+            slide=st.sidebar.slider("Select threshold",0,255)
+            ret,th = cv.threshold(img,slide,255,cv.THRESH_BINARY)
+            plot(thresh,th)
         elif(thresh==types[1]):
+            if(st.sidebar.checkbox("Grayscale")):
+                img = cv.imdecode(file_bytes, cv.IMREAD_GRAYSCALE)
             slide=st.sidebar.slider("Select threshold",0,255)
             ret,th = cv.threshold(img,slide,255,cv.THRESH_BINARY_INV)
             plot(thresh,th)
         elif(thresh==types[2]):
+            if(st.sidebar.checkbox("Grayscale")):
+                img = cv.imdecode(file_bytes, cv.IMREAD_GRAYSCALE)
             slide=st.sidebar.slider("Select threshold",0,255)
             ret,th = cv.threshold(img,slide,255,cv.THRESH_TRUNC)
             plot(thresh,th)
         elif(thresh==types[3]):
+            if(st.sidebar.checkbox("Grayscale")):
+                img = cv.imdecode(file_bytes, cv.IMREAD_GRAYSCALE)
             slide=st.sidebar.slider("Select threshold",0,255)
             ret,th = cv.threshold(img,slide,255,cv.THRESH_TOZERO)
             plot(thresh,th)
         elif(thresh==types[4]):
+            if(st.sidebar.checkbox("Grayscale")):
+                img = cv.imdecode(file_bytes, cv.IMREAD_GRAYSCALE)
             slide=st.sidebar.slider("Select threshold",0,255)
             ret,th = cv.threshold(img,slide,255,cv.THRESH_TOZERO_INV)
             plot(thresh,th)
         elif(thresh==types[5]):
+            if(st.sidebar.checkbox("Grayscale")):
+                img = cv.imdecode(file_bytes, cv.IMREAD_GRAYSCALE)
             img = cv.medianBlur(img,5)
             slide=st.sidebar.slider("Select threshold",0,255)
             ret,th = cv.threshold(img,slide,255,cv.THRESH_BINARY)
