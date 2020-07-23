@@ -27,7 +27,7 @@ image_file = st.sidebar.file_uploader("", type=["jpg","png","jpeg"])
 
 st.sidebar.markdown("""<h1 style='text-align: center;color: red;'><a style='text-align: center;color: red;' href="https://www.youtube.com/c/rohanalytics?sub_confirmation=1" target="_blank">Youtube Tutorial</a></h1>""", unsafe_allow_html=True)
 st.sidebar.markdown("""<h1 style='text-align: center;color:  #0e76a8;'><a style='text-align: center;color:  #0e76a8;' href="https://www.linkedin.com/in/rohankokkula/" target="_blank">Linkedin Profile</a></h1>""", unsafe_allow_html=True)
-st.sidebar.markdown("""<h1 style='text-align: center;color: black;' ><a style='text-align: center;color: black;'href="https://www.github.com/rohankokkula/" target="_blank">Github Source Code</a></h1>""", unsafe_allow_html=True)
+st.sidebar.markdown("""<h1 style='text-align: center;color: black;' ><a style='text-align: center;color: black;'href="https://github.com/rohankokkula/TEATH" target="_blank">Github Source Code</a></h1>""", unsafe_allow_html=True)
 
 def sentiments(p):
     if(p>0):
