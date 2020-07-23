@@ -39,25 +39,25 @@ def sentiments(p):
 def extract(img):
     slide=st.sidebar.slider("Select Page Segmentation Mode",1,14)
     conf=f"-l eng --oem 3 --psm {slide}"
-    text=pt.image_to_string(img, config = conf)
-    if(text!=""):
+    msg=pt.image_to_string(img, config = conf)
+    if(msg!=""):
         st.markdown("<h1 style='color:yellow;'>Extracted Text</h1>", unsafe_allow_html=True)
         slot1=st.empty()
         slot2=st.empty()
         slot3=st.empty()
         if(st.sidebar.checkbox("Apply NER")):
-            doc1 = nlp(text)
+            doc1 = nlp(msg)
             for i in doc1.ents:
                 st.write(i.text,'-',i.label_)
         if(st.sidebar.checkbox("Apply Spelling Correction")):
-            corrected=TextBlob(text).correct()
+            corrected=TextBlob(msg).correct()
             slot1.markdown(f"{corrected}", unsafe_allow_html=True)
             polar=round(corrected.sentiment.polarity,2)
             slot2.markdown(f"""<h1 style='color:yellow;'>Polarity: <span style='color:white;'>{polar}</span></h1>""", unsafe_allow_html=True)
             slot3.markdown(f"""<h1 style='color:yellow;'>Sentiment: <span style='color:white;'>{sentiments(polar)}</span></h1>""", unsafe_allow_html=True)
         if(st.sidebar.checkbox("Remove Stopwords")):
             stop_words = set(stopwords.words('english')) 
-            word_tokens = word_tokenize(text) 
+            word_tokens = word_tokenize(msg) 
             filtered = [w for w in word_tokens if not w in stop_words]
             filtered = " ".join(filtered) 
             slot1.markdown(f"{filtered}", unsafe_allow_html=True)
