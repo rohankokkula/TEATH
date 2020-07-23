@@ -4,12 +4,10 @@ import pytesseract as pt
 from textblob import TextBlob
 import cv2 as cv
 import numpy as np
-import nltk,re
-from nltk.corpus import stopwords 
-from nltk.tokenize import word_tokenize 
+import re
 import matplotlib.pyplot as plt
-pt.pytesseract.tesseract_cmd = '/app/.apt/usr/bin/tesseract'
-#pt.pytesseract.tesseract_cmd = r'C:\Users\rohan\AppData\Local\Tesseract-OCR\tesseract.exe'
+#pt.pytesseract.tesseract_cmd = '/app/.apt/usr/bin/tesseract'
+pt.pytesseract.tesseract_cmd = r'C:\Users\rohan\AppData\Local\Tesseract-OCR\tesseract.exe'
 st.sidebar.markdown("""<img style=' align:center;  display: block;margin-left: auto;margin-right: auto;width: 50%;' src="https://media-fastly.hackerearth.com/media/companies/e8e3f0f-he.png">""",unsafe_allow_html=True)
 st.sidebar.markdown("""<style>body {background-color: #2C3454;color:white;}</style><body></body>""", unsafe_allow_html=True)
 st.markdown("""<h1 style='text-align: center; color: white;font-size:60px;margin-top:-50px;'>HACKEREARTH</h1><h1 style='text-align: center; color: white;font-size:30px;margin-top:-30px;'>Machine Learning Challenge<br>LOVE is LOVE</h1>""",unsafe_allow_html=True)
@@ -47,33 +45,20 @@ def extract(img):
         st.markdown("<h1 style='color:yellow;'>Extracted Text</h1>", unsafe_allow_html=True)
         slot1=st.empty()
         slot2=st.empty()
-        slot3=st.empty()
         if(st.sidebar.checkbox("Apply Spelling Correction")):
             corrected=TextBlob(text).correct()
             slot1.markdown(f"{corrected}", unsafe_allow_html=True)
             polar=round(corrected.sentiment.polarity,2)
-            slot2.markdown(f"""<h1 style='color:yellow;'>Polarity: <span style='color:white;'>{polar}</span></h1>""", unsafe_allow_html=True)
-            slot3.markdown(f"""<h1 style='color:yellow;'>Sentiment: <span style='color:white;'>{sentiments(polar)}</span></h1>""", unsafe_allow_html=True)
-        if(st.sidebar.checkbox("Remove Stopwords")):
-            stop_words = set(stopwords.words('english')) 
-            word_tokens = word_tokenize(text) 
-            filtered = [w for w in word_tokens if not w in stop_words]
-            filtered = " ".join(filtered) 
-            slot1.markdown(f"{filtered}", unsafe_allow_html=True)
-            polar=round(TextBlob(filtered).sentiment.polarity,2)
-            slot2.markdown(f"""<h1 style='color:yellow;'>Polarity: <span style='color:white;'>{polar}</span></h1>""", unsafe_allow_html=True)
-            slot3.markdown(f"""<h1 style='color:yellow;'>Sentiment: <span style='color:white;'>{sentiments(polar)}</span></h1>""", unsafe_allow_html=True)
+            slot2.markdown(f"""<h1 style='color:yellow;'>Polarity: <span style='color:white;'>{polar}</span> Sentiment: <span style='color:white;'>{sentiments(polar)}</span></h1>""", unsafe_allow_html=True)
         if(st.sidebar.checkbox("Remove Numbers & Special Characters")):
             filtered=re.sub(r'[^A-Za-z ]+', '', text)
             slot1.markdown(f"{filtered}", unsafe_allow_html=True)
             polar=round(TextBlob(filtered).sentiment.polarity,2)
-            slot2.markdown(f"""<h1 style='color:yellow;'>Polarity: <span style='color:white;'>{polar}</span></h1>""", unsafe_allow_html=True)
-            slot3.markdown(f"""<h1 style='color:yellow;'>Sentiment: <span style='color:white;'>{sentiments(polar)}</span></h1>""", unsafe_allow_html=True)
+            slot2.markdown(f"""<h1 style='color:yellow;'>Polarity: <span style='color:white;'>{polar}</span> Sentiment: <span style='color:white;'>{sentiments(polar)}</span></h1>""", unsafe_allow_html=True)
         else:
             slot1.markdown(f"{text}", unsafe_allow_html=True)
             polar=round(TextBlob(text).sentiment.polarity,2)
-            slot2.markdown(f"""<h1 style='color:yellow;'>Polarity: <span style='color:white;'>{polar}</span>   Sentiment: <span style='color:white;'>{sentiments(polar)}</span></h1>""", unsafe_allow_html=True)
-            slot3.markdown(f"""<h1 style='color:yellow;'>Sentiment: <span style='color:white;'>{sentiments(polar)}</span></h1>""", unsafe_allow_html=True)
+            slot2.markdown(f"""<h1 style='color:yellow;'>Polarity: <span style='color:white;'>{polar}</span> Sentiment: <span style='color:white;'>{sentiments(polar)}</span></h1>""", unsafe_allow_html=True)
     else:
         st.markdown("""<h1 style='text-align: center;'>TEXTLESS IMAGE</h1>""",unsafe_allow_html=True)
 def plot(name,value):
