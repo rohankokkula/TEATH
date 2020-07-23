@@ -13,7 +13,7 @@ Steps to Follow:
     4. Run cmd in current folder and enter `streamlit run app.py`
     5. App will be deployed at localhost:8501(mostly)
 3. For Heroku Deployment:
-    1. Create Heroku account and Install Heroku CLI from here -> https://devcenter.heroku.com/articles/heroku-cli#download-and-install
+    1. Create Heroku account and Install Heroku CLI: https://devcenter.heroku.com/articles/heroku-cli#download-and-install
     2. Create APP from Heroku Dashboard.
     3. Go to your APP dashboard settings on heroku website and in the buildpacks URL,<br>enter `https://github.com/heroku/heroku-buildpack-apt`<br>
     Now, Reveal Config vars and add <br>KEY: `TESSDATA_PREFIX`<br>VALUE:`./.apt/usr/share/tesseract-ocr/4.00/tessdata`
@@ -34,4 +34,5 @@ References:
 1. Streamlit: https://docs.streamlit.io/en/stable/api.html
 2. OpenCV Thresholding: https://docs.opencv.org/master/d7/d4d/tutorial_py_thresholding.html
 3. Pytesseract: https://pypi.org/project/pytesseract/ 
-4. Tesseract deployment on Heroku using Flask: https://towardsdatascience.com/deploy-python-tesseract-ocr-on-heroku-bbcc39391a8d
+4. TextBlob: https://pypi.org/project/textblob/
+5. Tesseract deployment on Heroku using Flask: https://towardsdatascience.com/deploy-python-tesseract-ocr-on-heroku-bbcc39391a8d
