@@ -28,6 +28,7 @@ Steps to Follow:
     5. App will be deployed at app-name.herokuapp.com
 
 <br>
+
 References:
 1. Streamlit: https://docs.streamlit.io/en/stable/api.html
 2. OpenCV Thresholding: https://docs.opencv.org/master/d7/d4d/tutorial_py_thresholding.html
