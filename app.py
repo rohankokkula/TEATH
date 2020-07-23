@@ -10,8 +10,8 @@ from nltk.tokenize import word_tokenize
 import matplotlib.pyplot as plt
 import spacy
 nlp = spacy.load("en_core_web_sm")
-#pt.pytesseract.tesseract_cmd = '/app/.apt/usr/bin/tesseract'
-pt.pytesseract.tesseract_cmd = r'C:\Users\rohan\AppData\Local\Tesseract-OCR\tesseract.exe'
+pt.pytesseract.tesseract_cmd = '/app/.apt/usr/bin/tesseract'
+#pt.pytesseract.tesseract_cmd = r'C:\Users\rohan\AppData\Local\Tesseract-OCR\tesseract.exe'
 st.sidebar.markdown("""<img style=' align:center;  display: block;margin-left: auto;margin-right: auto;width: 50%;' src="https://media-fastly.hackerearth.com/media/companies/e8e3f0f-he.png">""",unsafe_allow_html=True)
 st.sidebar.markdown("""<style>body {background-color: #2C3454;color:white;}</style><body></body>""", unsafe_allow_html=True)
 st.markdown("""<h1 style='text-align: center; color: white;font-size:60px;margin-top:-50px;'>HACKEREARTH</h1><h1 style='text-align: center; color: white;font-size:30px;margin-top:-30px;'>Machine Learning Challenge<br>LOVE is LOVE</h1>""",unsafe_allow_html=True)
