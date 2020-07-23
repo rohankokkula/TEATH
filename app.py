@@ -8,13 +8,12 @@ import nltk,re
 from nltk.corpus import stopwords 
 from nltk.tokenize import word_tokenize 
 import matplotlib.pyplot as plt
-import spacy
-nlp = spacy.load("en_core_web_sm")
 pt.pytesseract.tesseract_cmd = '/app/.apt/usr/bin/tesseract'
 #pt.pytesseract.tesseract_cmd = r'C:\Users\rohan\AppData\Local\Tesseract-OCR\tesseract.exe'
 st.sidebar.markdown("""<img style=' align:center;  display: block;margin-left: auto;margin-right: auto;width: 50%;' src="https://media-fastly.hackerearth.com/media/companies/e8e3f0f-he.png">""",unsafe_allow_html=True)
 st.sidebar.markdown("""<style>body {background-color: #2C3454;color:white;}</style><body></body>""", unsafe_allow_html=True)
 st.markdown("""<h1 style='text-align: center; color: white;font-size:60px;margin-top:-50px;'>HACKEREARTH</h1><h1 style='text-align: center; color: white;font-size:30px;margin-top:-30px;'>Machine Learning Challenge<br>LOVE is LOVE</h1>""",unsafe_allow_html=True)
+
 def intro():
     st.markdown("""<h2 style='text-align: left; color: white;'>Problem Statement</h2><p style='color: white;'>Love knows no gender and the LGBTQ (Lesbian, Gay, Bisexual, Transgender, and Queer) community is the epitome of this thought. <br>In honor of Pride Month, we are here with another Machine Learning challenge, in association with Pride Circle, to celebrate the impact and changes that they made globally.<br>You have been appointed as a social media moderator for your firm. <br>Your key responsibility is to tag and categorize quotes that are uploaded during Pride Month on the basis of its sentiment—positive, negative, and random. <br>Your task is to build a sophisticated Machine Learning model combining Optical Character Recognition (OCR) and Natural Language Processing (NLP) to assess sentiments of these quotes.</p>""",unsafe_allow_html=True)
     st.markdown("""<h2 style='text-align: left; color: white;'>TASK</h2><p style='color: white;'>You need to perform OCR on Images to extract text and then perform sentiment analysis on the extracted texts and classify them into positive, negative, or random.</p>""",unsafe_allow_html=True)
@@ -23,11 +22,15 @@ def intro():
     <li>Get Sentiment Polarity of extracted text using TextBlob</li>
     <li>Classify texts as:<br>Positive if polarity is greater than 0,<br>Negative if polarity is less than 0,<br>Random if polarity is 0 or length of extracted text is 0</li></ul></p>""",unsafe_allow_html=True)
     st.markdown("""<a style='text-align: center; color: white;font-size:30px;' href="https://www.hackerearth.com/challenges/competitive/hackerearth-machine-learning-challenge-pride-month-edition/leaderboard/detect-the-sentiment-of-a-quote-2-ca749be7/page/3/" target="_blank">LeaderBoard</a>""",unsafe_allow_html=True)
+
 st.sidebar.markdown("<h1 style='text-align: center;color: #2C3454;margin-top:30px;margin-bottom:-20px;'>Select Image</h1>", unsafe_allow_html=True)
+
 image_file = st.sidebar.file_uploader("", type=["jpg","png","jpeg"])
+
 st.sidebar.markdown("""<h1 style='text-align: center;color: red;'><a style='text-align: center;color: red;' href="https://www.youtube.com/c/rohanalytics?sub_confirmation=1" target="_blank">Youtube Tutorial</a></h1>""", unsafe_allow_html=True)
 st.sidebar.markdown("""<h1 style='text-align: center;color:  #0e76a8;'><a style='text-align: center;color:  #0e76a8;' href="https://www.linkedin.com/in/rohankokkula/" target="_blank">Linkedin Profile</a></h1>""", unsafe_allow_html=True)
 st.sidebar.markdown("""<h1 style='text-align: center;color: black;' ><a style='text-align: center;color: black;'href="https://www.github.com/rohankokkula/" target="_blank">Github Source Code</a></h1>""", unsafe_allow_html=True)
+
 def sentiments(p):
     if(p>0):
         return("Positive")
@@ -39,25 +42,21 @@ def sentiments(p):
 def extract(img):
     slide=st.sidebar.slider("Select Page Segmentation Mode",1,14)
     conf=f"-l eng --oem 3 --psm {slide}"
-    msg=pt.image_to_string(img, config = conf)
-    if(msg!=""):
+    text=pt.image_to_string(img, config = conf)
+    if(text!=""):
         st.markdown("<h1 style='color:yellow;'>Extracted Text</h1>", unsafe_allow_html=True)
         slot1=st.empty()
         slot2=st.empty()
         slot3=st.empty()
-        if(st.sidebar.checkbox("Apply NER")):
-            doc1 = nlp(msg)
-            for i in doc1.ents:
-                st.write(i.text,'-',i.label_)
         if(st.sidebar.checkbox("Apply Spelling Correction")):
-            corrected=TextBlob(msg).correct()
+            corrected=TextBlob(text).correct()
             slot1.markdown(f"{corrected}", unsafe_allow_html=True)
             polar=round(corrected.sentiment.polarity,2)
             slot2.markdown(f"""<h1 style='color:yellow;'>Polarity: <span style='color:white;'>{polar}</span></h1>""", unsafe_allow_html=True)
             slot3.markdown(f"""<h1 style='color:yellow;'>Sentiment: <span style='color:white;'>{sentiments(polar)}</span></h1>""", unsafe_allow_html=True)
         if(st.sidebar.checkbox("Remove Stopwords")):
             stop_words = set(stopwords.words('english')) 
-            word_tokens = word_tokenize(msg) 
+            word_tokens = word_tokenize(text) 
             filtered = [w for w in word_tokens if not w in stop_words]
             filtered = " ".join(filtered) 
             slot1.markdown(f"{filtered}", unsafe_allow_html=True)
