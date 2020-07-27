@@ -1,5 +1,5 @@
 # TEATH-Text Extraction And THresholding
-[![Demonstration on Youtube](http://img.youtube.com/vi/C6BM_dg75ao/0.jpg)](http://www.youtube.com/watch?v=C6BM_dg75ao "Text Extraction And THresholding")
+[![Demonstration on Youtube](http://img.youtube.com/vi/C6BM_dg75ao/0.jpg)](http://www.youtube.com/watch?v=C6BM_dg75ao "Youtube video demonstration")
 ## TEATH is a WebApp for Extracting Text from Images and Thresholding with the help of pytesseract and OpenCV.
 ### This project is an app-version of ML challenge by HackerEarth Pride Month Edition<br>Ranked 113th Position out of 5042 Participants.
 <a href="https://www.hackerearth.com/challenges/competitive/hackerearth-machine-learning-challenge-pride-month-edition/" target="_blank">Link to Competition</a><br>
