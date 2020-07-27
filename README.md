@@ -2,7 +2,8 @@
 
 [![Demonstration on Youtube](http://img.youtube.com/vi/C6BM_dg75ao/0.jpg)](http://www.youtube.com/watch?v=C6BM_dg75ao "Youtube video demonstration")
 ## A Streamlit-Heroku WebApp for Extracting Text from Images and applying various thresholding methods using Pytesseract and OpenCV.
-### This project is an app-version of ML challenge by HackerEarth Pride Month Edition<br>Ranked 113th Position out of 5042 Participants.
+### Ranked 113th Position out of 5042 Participants in HackerEarth's Pride Month Challenge.
+
 <a href="https://www.hackerearth.com/challenges/competitive/hackerearth-machine-learning-challenge-pride-month-edition/" target="_blank">Link to Competition</a><br>
 
 ## Try it out! http://teath.herokuapp.com
