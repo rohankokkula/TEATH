@@ -6,7 +6,7 @@
 
 <a href="https://www.hackerearth.com/challenges/competitive/hackerearth-machine-learning-challenge-pride-month-edition/" target="_blank">Link to Competition</a><br>
 
-## Try it out! http://teath.herokuapp.com
+## Try the app. It's Live.! http://teath.herokuapp.com
 Steps to Follow:
 1. Clone the repository `git clone https://github.com/rohankokkula/teath.git`
 2. For Localhost:
