@@ -7,7 +7,10 @@
 <a href="https://www.hackerearth.com/challenges/competitive/hackerearth-machine-learning-challenge-pride-month-edition/" target="_blank">Link to Competition</a><br>
 
 ## Try the app. It's Live.! http://teath.herokuapp.com
-Steps to Follow:
+
+Wanna try on your own and make changes?<br>
+Feel free to fork/clone!<br>
+Follow these steps.
 1. Clone the repository `git clone https://github.com/rohankokkula/teath.git`
 2. For Localhost:
     1. `pip install -r requirements.txt`
