@@ -21,7 +21,7 @@ Steps to Follow:
     3. Go to your APP dashboard settings on heroku website and in the buildpacks URL,<br>enter `https://github.com/heroku/heroku-buildpack-apt`<br>
     Now, Reveal Config vars and add <br>KEY: `TESSDATA_PREFIX`<br>VALUE:`./.apt/usr/share/tesseract-ocr/4.00/tessdata`
     3. Run cmd in current folder and enter `heroku login`( Logging into your account)
-    4. After successful login, follow the below steps:
+    4. After successful login, follow these steps:
     ```
     git add .
     git commit -am "First commit"
