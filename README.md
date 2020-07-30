@@ -6,7 +6,7 @@
 
 <a href="https://www.hackerearth.com/challenges/competitive/hackerearth-machine-learning-challenge-pride-month-edition/" target="_blank">Link to Competition</a><br>
 
-## Try the app. It' live here.. http://teath.herokuapp.com
+## Try the app. It's live here.. http://teath.herokuapp.com
 
 Wanna try on your own and make changes?<br>
 Feel free to fork/clone!<br>
