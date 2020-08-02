@@ -1,5 +1,5 @@
 <h1>TEATH - Text Extraction And THresholding</h1>
-
+<a href="http://www.youtube.com/watch?v=C6BM_dg75ao" target="_blank">Watch demo</a>
 [![Demonstration on Youtube](http://img.youtube.com/vi/C6BM_dg75ao/0.jpg)](http://www.youtube.com/watch?v=C6BM_dg75ao "Youtube video demonstration")
 ## A Streamlit-Heroku WebApp for Extracting Text from Images and applying various thresholding methods using Pytesseract and OpenCV.
 ### Ranked 113th Position out of 5042 Participants in HackerEarth's Pride Month Challenge.
