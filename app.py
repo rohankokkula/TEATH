@@ -65,9 +65,9 @@ def extract(img):
 def plot(name,value):
     st.markdown(f"""<h1 style='text-align: center;'>{name} OUTPUT</h1>""",unsafe_allow_html=True)
     plt.imshow(value,'gray')
-    thplot="Thresholded plots\plot.png"
+    thplot="plot.png"
     plt.savefig(thplot, transparent=True)
-    st.image('Thresholded plots/plot.png',width=600)
+    st.image('plot.png',width=600)
     extract(value)
 
 if image_file is not None:
